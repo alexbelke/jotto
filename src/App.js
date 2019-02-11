@@ -2,10 +2,12 @@ import React, { Component } from 'react';
 import './App.css';
 import GuessedWords from './components/GuessedWords/GuessedWords';
 import Congrats from './components/Congrats/Congrats';
+import {SnackbarProvider} from 'notistack';
 
 class App extends Component {
   render() {
     return (
+      <SnackbarProvider>
       <div className="container">
         <h1>Jotto</h1>
         <Congrats success={true} />
@@ -13,6 +15,7 @@ class App extends Component {
           { guessedWord: 'train', letterMatchCount: 3 }
         ]} />
       </div>
+      </SnackbarProvider>
     );
   }
 }
